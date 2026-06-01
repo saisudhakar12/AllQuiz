@@ -1,0 +1,13 @@
+1,What is the force that pulls objects toward Earth?,Magnetism,Gravity,Friction,Thrust,b
+2,Light travels faster in which medium?,Glass,Vacuum,Water,Air,b
+3,What is the unit of electric current?,Volt,Ohm,Ampere,Henry,c
+4,Which organelle is the powerhouse of the cell?,Nucleus,Ribosome,Mitochondria,Chloroplast,c
+5,Sound is a form of which type of wave?,Electromagnetic,Transverse,Longitudinal,Stationary,c
+6,Which planet is known for its rings?,Jupiter,Saturn,Mars,Venus,b
+7,What does DNA stand for?,Deoxyribonucleic acid,Deoxyribose nucleic acid,Ribonucleic acid,Deoxynucleic acid,a
+8,What is the speed of light approx (m/s)?,3x10^8,1x10^6,9.8,1.6x10^-19,a
+9,Which gas do plants release during photosynthesis?,Nitrogen,Oxygen,Carbon dioxide,Hydrogen,b
+10,What is renewable energy from sun called?,Hydropower,Solar power,Wind power,Geothermal,b
+11,What particle has a negative charge?,Proton,Neutron,Electron,Photon,c
+12,The study of living organisms is called?,Chemistry,Biology,Physics,Geology,b
+

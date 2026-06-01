@@ -1,0 +1,13 @@
+1,What is the chemical symbol for water?,H2O,CO2,O2,NaCl,a
+2,Which gas is responsible for the greenhouse effect?,Oxygen,Nitrogen,Carbon dioxide,Helium,c
+3,What is the pH of pure water at 25°C?,7,1,14,0,a
+4,Avogadro's number is approximately?,6.02e23,3.14,9.81,1.6e-19,a
+5,Which element has atomic number 6?,Carbon,Oxygen,Nitrogen,Helium,a
+6,What is the process of converting a liquid to vapor called?,Condensation,Evaporation,Sublimation,Freezing,b
+7,Which bond involves sharing of electron pairs?,Ionic,Hydrogen,Covalent,Metallic,c
+8,Which acid is present in stomach?,Hydrochloric acid,Sulfuric acid,Acetic acid,Nitric acid,a
+9,What is the common name for sodium bicarbonate?,Baking powder,Baking soda,Table salt,Plaster,b
+10,Which metal is liquid at room temperature?,Mercury,Iron,Aluminum,Gold,a
+11,Which polymer is used to make plastic bags?,Polyethylene,Polypropylene,Nylon,PVC,a
+12,What is the formula of table salt?,NaCl,KCl,CaCl2,MgCl2,a
+

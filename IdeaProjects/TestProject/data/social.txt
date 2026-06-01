@@ -1,0 +1,13 @@
+1,What is the capital of India?,Mumbai,New Delhi,Kolkata,Chennai,b
+2,Which movement fought for India's independence using non-violence?,Quit India,Non-Cooperation,Civil Disobedience,Swadeshi,c
+3,Which is a fundamental right in many democracies?,Freedom of speech,Right to fly,Right to be invisible,Right to unlimited wealth,a
+4,What does GDP measure?,Population,Wealth produced in an economy,Number of schools,Number of holidays,b
+5,Which body makes laws in a country?,Judiciary,Executive,Legislature,Administration,c
+6,Which is an example of primary sector activity?,Banking,Mining,Software development,Healthcare,b
+7,What is a constitution?,A book of recipes,A set of fundamental rules and laws,A fiction novel,A travel guide,b
+8,Which event is celebrated as Republic Day in India?,Independence from Britain,Adoption of the Constitution,Treaty signing,First Election,b
+9,What is census used for?,Counting livestock,Measuring temperatures,Counting population,Measuring rainfall,c
+10,Which right protects people from unfair detention?,Right to property,Right to personal liberty,Right to unlimited speech,Right to travel,b
+11,What is social science study?,Physical laws,Human society and relationships,Plant growth,Space exploration,b
+12,Which institution resolves civil disputes?,Police,Courts,Parliament,Schools,b
+

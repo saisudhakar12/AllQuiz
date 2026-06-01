@@ -1,0 +1,13 @@
+1,Who is the eldest of the Pandavas?,Yudhisthira,Bhima,Arjuna,Nakula,a
+2,Who is the mother of the Pandavas?,Kunti,Draupadi,Satyavati,Gandhari,a
+3,Who fought with Karna in the Kurukshetra war and ultimately killed him?,Arjuna,Bhima,Yudhisthira,Abhimanyu,a
+4,Who was the teacher of both Kauravas and Pandavas in martial arts?,Drona,Bhishma,Kripa,Parashurama,a
+5,Which weapon did Arjuna obtain from Lord Shiva?,Pashupata,Brahmastra,Agneyastra,Varunastra,a
+6,Who is the author of the Mahabharata?,Vyasa,Brahma,Vishnu,Shiva,a
+7,Who killed Duryodhana?,Bhima,Arjuna,Yudhisthira,Shikhandi,a
+8,What is the name of the Pandavas' mother who married Pandu?,Kunti,Satyavati,Gandhari,Draupadi,a
+9,Who was the charioteer of Arjuna who narrated the Bhagavad Gita?,Krishna,Sanjaya,Subhadra,Kripacharya,b
+10,Who was blind king of Hastinapur?,Dhritarashtra,Pandu,Bhishma,Drona,a
+11,Which warrior had the boon of not being killed by any man but was killed by a woman?,Bhishma,Barbarika,Shikhandi,Abhimanyu,c
+12,Who is known for his devotion to Lord Krishna and is a key ally of Pandavas?,Sahadeva,Kripa,Arjuna,Subhadra,c
+

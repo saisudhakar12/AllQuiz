@@ -1,0 +1,13 @@
+1,Which is the star at the center of our solar system?,Moon,Sun,Sirius,Polaris,b
+2,Which planet is known as the Red Planet?,Earth,Mars,Venus,Jupiter,b
+3,What galaxy is Earth located in?,Andromeda,Milky Way,Triangulum,Whirlpool,b
+4,What is a light-year?,Unit of time,Unit of distance,Unit of mass,Type of star,b
+5,Which planet has the most moons?,Earth,Mars,Saturn,Venus,c
+6,What do we call a rock from space that reaches Earth's surface?,Asteroid,Meteor,Comet,Satellite,b
+7,What is the nearest star to Earth after the Sun?,Proxima Centauri,Sirius,Alpha Centauri,Betelgeuse,a
+8,What causes a solar eclipse?,Moon between Earth and Sun,Earth between Sun and Moon,Sun between Earth and Moon,Sun behind Moon,a
+9,What is the shape of most planetary orbits?,Circular,Parabolic,Elliptical,Hyperbolic,c
+10,What do we call a newborn star?,Red giant,Protostar,White dwarf,Supernova,b
+11,Which telescope revolutionized astronomy since space observations?,Hubble Space Telescope,Kepler,Chandra,James Webb,a
+12,What is a supernova?,Dying planet,Exploding star,New galaxy,Black hole formation,b
+

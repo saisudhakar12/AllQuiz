@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz Project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Quiz Project</h1>
+
+    <section id="intro">
+      <label for="topic">Choose a topic:</label>
+      <select id="topic">
+        <option value="chemistry.txt">Chemistry</option>
+        <option value="science.txt">Science</option>
+        <option value="astronomy.txt">Astronomy</option>
+        <option value="mahabharata.txt">Mahabharata</option>
+        <option value="social.txt">Social</option>
+      </select>
+      <button id="startBtn">Start Quiz</button>
+      <p class="hint">Each quiz shows 10 random questions from the selected topic.</p>
+    </section>
+
+    <section id="quiz" class="hidden">
+      <div id="progress">Question <span id="qnum">1</span> / <span id="qtotal">10</span></div>
+      <div id="questionCard">
+        <div id="questionText"></div>
+        <form id="optionsForm"></form>
+      </div>
+      <div class="controls">
+        <button id="nextBtn" disabled>Next</button>
+      </div>
+    </section>
+
+    <section id="reveal" class="hidden">
+      <div class="letter" id="letter" title="Click to open your score">📩</div>
+    </section>
+
+    <section id="scorecard" class="overlay hidden">
+      <div class="scoreBox" id="scoreBox">
+        <h2>Your Score</h2>
+        <p id="scoreText"></p>
+        <button id="restartBtn">Try Another Topic</button>
+      </div>
+      <div class="party left">🎊</div>
+      <div class="party right">🎉</div>
+    </section>
+
+    <footer>
+      <p>Quiz files are loaded from the local <code>data/</code> folder.</p>
+    </footer>
+  </main>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
+

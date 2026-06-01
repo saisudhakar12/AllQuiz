@@ -1,0 +1,48 @@
+:root{
+  --bg: #f9fafb;
+  --card: #fff;
+  --accent: #3366ff;
+  --muted: #666;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,Segoe UI,Roboto,Arial; background:var(--bg); color:#111; margin:0; padding:20px}
+.container{max-width:760px;margin:0 auto}
+h1{text-align:center}
+.hidden{display:none}
+#intro{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+select{padding:8px}
+button{padding:8px 12px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:var(--accent);color:#fff;cursor:pointer}
+button[disabled]{opacity:0.5;cursor:not-allowed}
+.hint{color:var(--muted);font-size:13px}
+#quiz{background:var(--card);padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(30,30,50,0.06)}
+#progress{font-weight:600;margin-bottom:6px}
+#questionCard{padding:12px 6px}
+#questionText{font-size:18px;margin-bottom:12px}
+#optionsForm{display:flex;flex-direction:column;gap:10px}
+.optionLabel{display:flex;gap:10px;align-items:center;padding:10px;border-radius:6px;border:1px solid #eee}
+.optionLabel input{transform:scale(1.1)}
+.controls{margin-top:12px;text-align:right}
+
+.letter{font-size:48px;cursor:pointer;display:inline-block;padding:10px;border-radius:8px;background:linear-gradient(180deg,#fff,#f0f6ff);box-shadow:0 6px 24px rgba(50,70,120,0.08);}
+
+.overlay{position:fixed;inset:0;align-items:center;justify-content:center;z-index:60}
+.overlay.hidden{display:none}
+.overlay.show{display:flex}
+.scoreBox{background:var(--card);padding:24px;border-radius:10px;box-shadow:0 20px 60px rgba(20,30,60,0.2);text-align:center;transform:scale(0.8);opacity:0;transition:all .45s cubic-bezier(.2,.9,.2,1)}
+.overlay.show .scoreBox{transform:scale(1);opacity:1}
+.party{position:fixed;font-size:48px;top:40%;opacity:0;transform:translateY(-50%) scale(0.6);transition:all .6s ease;pointer-events:none}
+.party.left{left:12%}
+.party.right{right:12%}
+.overlay.show .party{opacity:1;transform:translateY(0) scale(1)}
+
+/* small responsive */
+@media (max-width:520px){.container{padding:10px} .party{display:none}}
+
+/* confetti particles */
+.confetti{position:fixed;left:50%;top:20%;pointer-events:none;z-index:80}
+.confetti span{position:absolute;font-size:22px;animation:fall 1.6s linear forwards;opacity:0}
+@keyframes fall{
+  0%{opacity:1;transform:translateY(-20px) rotate(0deg)}
+  100%{opacity:1;transform:translateY(260px) rotate(720deg)}
+}
+
