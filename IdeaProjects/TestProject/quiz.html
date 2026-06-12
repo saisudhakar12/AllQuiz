@@ -8,22 +8,65 @@
 </head>
 <body>
   <main class="container">
-    <h1>Quiz Project</h1>
+    <!-- ADMIN PAGE -->
+    <section id="adminPage" class="admin-section">
+      <div class="admin-header">
+        <h1>🎓 Quiz Admin Settings</h1>
+        <p>Configure your quiz experience before starting</p>
+      </div>
 
-    <section id="intro">
-      <label for="topic">Choose a topic:</label>
-      <select id="topic">
-        <option value="chemistry.txt">Chemistry</option>
-        <option value="science.txt">Science</option>
-        <option value="astronomy.txt">Astronomy</option>
-        <option value="mahabharata.txt">Mahabharata</option>
-        <option value="social.txt">Social</option>
-      </select>
-      <button id="startBtn">Start Quiz</button>
-      <p class="hint">Each quiz shows 10 random questions from the selected topic.</p>
+      <div class="admin-content">
+        <div class="admin-card">
+          <h3>Select Theme</h3>
+          <select id="themeSelect" class="admin-dropdown">
+            <option value="default">Default - Fresh Blue</option>
+            <option value="ocean">Ocean - Deep Blue & Teal</option>
+            <option value="sunset">Sunset - Orange & Purple</option>
+            <option value="forest">Forest - Green & Earth Tones</option>
+            <option value="candy">Candy - Pink & Pastel</option>
+            <option value="midnight">Midnight - Dark & Gold</option>
+          </select>
+        </div>
+
+        <div class="admin-card">
+          <h3>Question Display Mode</h3>
+          <select id="displayMode" class="admin-dropdown">
+            <option value="random">Random Questions</option>
+            <option value="serial">Serial Questions (By Range)</option>
+          </select>
+        </div>
+
+        <div class="admin-card">
+          <h3>Select Questions</h3>
+          <div id="questionRangeContainer" class="hidden">
+            <div class="range-buttons" id="rangeButtons"></div>
+          </div>
+          <div id="randomModeContainer">
+            <label for="topic">Choose a topic:</label>
+            <select id="topic" class="admin-dropdown">
+              <option value="chemistry.txt">Chemistry</option>
+              <option value="science.txt">Science</option>
+              <option value="astronomy.txt">Astronomy</option>
+              <option value="mahabharata.txt">Mahabharata</option>
+              <option value="social.txt">Social</option>
+            </select>
+            <button id="startBtn" class="admin-btn-start">Start Quiz</button>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- QUIZ PAGE -->
     <section id="quiz" class="hidden">
+      <div class="quiz-header">
+        <div class="quiz-topic">
+          <h2 id="topicTitle"></h2>
+        </div>
+        <div class="quiz-timer">
+          <span id="timer">00:00</span>
+        </div>
+      </div>
+
       <div id="progress">Question <span id="qnum">1</span> / <span id="qtotal">10</span></div>
       <div id="questionCard">
         <div id="questionText"></div>
@@ -34,15 +77,26 @@
       </div>
     </section>
 
+    <!-- RESULT LETTER -->
     <section id="reveal" class="hidden">
-      <div class="letter" id="letter" title="Click to open your score">📩</div>
+      <div class="letter-container">
+        <div class="letter" id="letter" title="Click to open your score">📩</div>
+        <p class="letter-hint">Click the letter to view your results</p>
+      </div>
     </section>
 
+    <!-- SCORECARD OVERLAY -->
     <section id="scorecard" class="overlay hidden">
       <div class="scoreBox" id="scoreBox">
         <h2>Your Score</h2>
         <p id="scoreText"></p>
-        <button id="restartBtn">Try Another Topic</button>
+
+        <div id="answerReview" class="answer-review hidden">
+          <h3>Answer Review</h3>
+          <div id="reviewContainer"></div>
+        </div>
+
+        <button id="restartBtn" class="restart-btn">Try Another Quiz</button>
       </div>
       <div class="party left">🎊</div>
       <div class="party right">🎉</div>

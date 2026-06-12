@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Diagnostic</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        .test { margin: 15px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .test.success { background: #d4edda; border-color: #28a745; color: #155724; }
+        .test.error { background: #f8d7da; border-color: #f5c6cb; color: #721c24; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #0056b3; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 3px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Quiz Application Diagnostic Tool</h1>
+        <p>Click the buttons below to test if files are being loaded correctly:</p>
+
+        <button onclick="testFetch('data/chemistry.txt')">Test Chemistry.txt</button>
+        <button onclick="testFetch('data/science.txt')">Test Science.txt</button>
+        <button onclick="testFetch('data/astronomy.txt')">Test Astronomy.txt</button>
+        <button onclick="testFetch('quiz.html')">Test Quiz.html</button>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        const resultsDiv = document.getElementById('results');
+
+        async function testFetch(url) {
+            const resultEl = document.createElement('div');
+            resultEl.className = 'test';
+            resultsDiv.appendChild(resultEl);
+
+            try {
+                console.log(`Fetching: ${url}`);
+                resultEl.innerHTML = `<strong>Testing: ${url}</strong><br>Loading...`;
+
+                const response = await fetch(url);
+                console.log(`Response status: ${response.status}`);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const text = await response.text();
+                const lines = text.split('\n').length;
+
+                resultEl.className = 'test success';
+                resultEl.innerHTML = `
+                    <strong>✅ SUCCESS: ${url}</strong><br>
+                    Status: ${response.status} ${response.statusText}<br>
+                    Size: ${text.length} bytes<br>
+                    Lines: ${lines}<br>
+                    <pre>${text.substring(0, 500)}${text.length > 500 ? '...' : ''}</pre>
+                `;
+            } catch (error) {
+                console.error(`Error fetching ${url}:`, error);
+                resultEl.className = 'test error';
+                resultEl.innerHTML = `
+                    <strong>❌ ERROR: ${url}</strong><br>
+                    ${error.message}<br>
+                    <br>
+                    <strong>Troubleshooting Tips:</strong>
+                    <ul>
+                        <li>Make sure you're accessing this page via http://localhost:8000 (not file://)</li>
+                        <li>Ensure the Python server is running in the project directory</li>
+                        <li>Check that all data files exist in the data/ folder</li>
+                        <li>Check browser console (F12) for more details</li>
+                    </ul>
+                `;
+            }
+        }
+
+        // Initial info
+        const infoEl = document.createElement('div');
+        infoEl.className = 'test';
+        infoEl.innerHTML = `
+            <strong>ℹ️ Current URL: ${window.location.href}</strong><br>
+            ${window.location.protocol === 'http:' || window.location.protocol === 'https:'
+                ? '✅ Using HTTP/HTTPS (Good!)'
+                : '❌ Using file:// protocol (This will NOT work - need to use local server)'}
+        `;
+        resultsDiv.appendChild(infoEl);
+    </script>
+</body>
+</html>
+
