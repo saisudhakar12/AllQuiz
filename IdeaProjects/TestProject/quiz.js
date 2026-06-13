@@ -1,4 +1,6 @@
-// Quiz logic with Admin Settings
+// Quiz Application - No Server Required (Embedded Data)
+// All quiz data is embedded directly in this file
+
 const adminPage = document.getElementById('adminPage');
 const themeSelect = document.getElementById('themeSelect');
 const displayMode = document.getElementById('displayMode');
@@ -35,11 +37,87 @@ let selectedRange = null;
 
 // Topic display names
 const topicNames = {
-  'chemistry.txt': 'Chemistry',
-  'science.txt': 'Science',
-  'astronomy.txt': 'Astronomy',
-  'mahabharata.txt': 'Mahabharata',
-  'social.txt': 'Social'
+  'chemistry': 'Chemistry',
+  'science': 'Science',
+  'astronomy': 'Astronomy',
+  'mahabharata': 'Mahabharata',
+  'social': 'Social'
+};
+
+// ===== EMBEDDED QUIZ DATA =====
+// All quiz questions are embedded directly in this file for GitHub compatibility
+
+const quizData = {
+  chemistry: [
+    {seq: '1', question: 'What is the chemical symbol for water?', a: 'H2O', b: 'CO2', c: 'O2', d: 'NaCl', correct: 'a'},
+    {seq: '2', question: 'Which gas is responsible for the greenhouse effect?', a: 'Oxygen', b: 'Nitrogen', c: 'Carbon dioxide', d: 'Helium', correct: 'c'},
+    {seq: '3', question: 'What is the pH of pure water at 25°C?', a: '7', b: '1', c: '14', d: '0', correct: 'a'},
+    {seq: '4', question: 'Avogadro\'s number is approximately?', a: '6.02e23', b: '3.14', c: '9.81', d: '1.6e-19', correct: 'a'},
+    {seq: '5', question: 'Which element has atomic number 6?', a: 'Carbon', b: 'Oxygen', c: 'Nitrogen', d: 'Helium', correct: 'a'},
+    {seq: '6', question: 'What is the process of converting a liquid to vapor called?', a: 'Condensation', b: 'Evaporation', c: 'Sublimation', d: 'Freezing', correct: 'b'},
+    {seq: '7', question: 'Which bond involves sharing of electron pairs?', a: 'Ionic', b: 'Hydrogen', c: 'Covalent', d: 'Metallic', correct: 'c'},
+    {seq: '8', question: 'Which acid is present in stomach?', a: 'Hydrochloric acid', b: 'Sulfuric acid', c: 'Acetic acid', d: 'Nitric acid', correct: 'a'},
+    {seq: '9', question: 'What is the common name for sodium bicarbonate?', a: 'Baking powder', b: 'Baking soda', c: 'Table salt', d: 'Plaster', correct: 'b'},
+    {seq: '10', question: 'Which metal is liquid at room temperature?', a: 'Mercury', b: 'Iron', c: 'Aluminum', d: 'Gold', correct: 'a'},
+    {seq: '11', question: 'Which polymer is used to make plastic bags?', a: 'Polyethylene', b: 'Polypropylene', c: 'Nylon', d: 'PVC', correct: 'a'},
+    {seq: '12', question: 'What is the formula of table salt?', a: 'NaCl', b: 'KCl', c: 'CaCl2', d: 'MgCl2', correct: 'a'}
+  ],
+  science: [
+    {seq: '1', question: 'What is the force that pulls objects toward Earth?', a: 'Magnetism', b: 'Gravity', c: 'Friction', d: 'Thrust', correct: 'b'},
+    {seq: '2', question: 'Light travels faster in which medium?', a: 'Glass', b: 'Vacuum', c: 'Water', d: 'Air', correct: 'b'},
+    {seq: '3', question: 'What is the unit of electric current?', a: 'Volt', b: 'Ohm', c: 'Ampere', d: 'Henry', correct: 'c'},
+    {seq: '4', question: 'Which organelle is the powerhouse of the cell?', a: 'Nucleus', b: 'Ribosome', c: 'Mitochondria', d: 'Chloroplast', correct: 'c'},
+    {seq: '5', question: 'Sound is a form of which type of wave?', a: 'Electromagnetic', b: 'Transverse', c: 'Longitudinal', d: 'Stationary', correct: 'c'},
+    {seq: '6', question: 'Which planet is known for its rings?', a: 'Jupiter', b: 'Saturn', c: 'Mars', d: 'Venus', correct: 'b'},
+    {seq: '7', question: 'What does DNA stand for?', a: 'Deoxyribonucleic acid', b: 'Deoxyribose nucleic acid', c: 'Ribonucleic acid', d: 'Deoxynucleic acid', correct: 'a'},
+    {seq: '8', question: 'What is the speed of light approx (m/s)?', a: '3x10^8', b: '1x10^6', c: '9.8', d: '1.6x10^-19', correct: 'a'},
+    {seq: '9', question: 'Which gas do plants release during photosynthesis?', a: 'Nitrogen', b: 'Oxygen', c: 'Carbon dioxide', d: 'Hydrogen', correct: 'b'},
+    {seq: '10', question: 'What is renewable energy from sun called?', a: 'Hydropower', b: 'Solar power', c: 'Wind power', d: 'Geothermal', correct: 'b'},
+    {seq: '11', question: 'What particle has a negative charge?', a: 'Proton', b: 'Neutron', c: 'Electron', d: 'Photon', correct: 'c'},
+    {seq: '12', question: 'The study of living organisms is called?', a: 'Chemistry', b: 'Biology', c: 'Physics', d: 'Geology', correct: 'b'}
+  ],
+  astronomy: [
+    {seq: '1', question: 'Which is the star at the center of our solar system?', a: 'Moon', b: 'Sun', c: 'Sirius', d: 'Polaris', correct: 'b'},
+    {seq: '2', question: 'Which planet is known as the Red Planet?', a: 'Earth', b: 'Mars', c: 'Venus', d: 'Jupiter', correct: 'b'},
+    {seq: '3', question: 'What galaxy is Earth located in?', a: 'Andromeda', b: 'Milky Way', c: 'Triangulum', d: 'Whirlpool', correct: 'b'},
+    {seq: '4', question: 'What is a light-year?', a: 'Unit of time', b: 'Unit of distance', c: 'Unit of mass', d: 'Type of star', correct: 'b'},
+    {seq: '5', question: 'Which planet has the most moons?', a: 'Earth', b: 'Mars', c: 'Saturn', d: 'Venus', correct: 'c'},
+    {seq: '6', question: 'What do we call a rock from space that reaches Earth\'s surface?', a: 'Asteroid', b: 'Meteor', c: 'Comet', d: 'Satellite', correct: 'b'},
+    {seq: '7', question: 'What is the nearest star to Earth after the Sun?', a: 'Proxima Centauri', b: 'Sirius', c: 'Alpha Centauri', d: 'Betelgeuse', correct: 'a'},
+    {seq: '8', question: 'What causes a solar eclipse?', a: 'Moon between Earth and Sun', b: 'Earth between Sun and Moon', c: 'Sun between Earth and Moon', d: 'Sun behind Moon', correct: 'a'},
+    {seq: '9', question: 'What is the shape of most planetary orbits?', a: 'Circular', b: 'Parabolic', c: 'Elliptical', d: 'Hyperbolic', correct: 'c'},
+    {seq: '10', question: 'What do we call a newborn star?', a: 'Red giant', b: 'Protostar', c: 'White dwarf', d: 'Supernova', correct: 'b'},
+    {seq: '11', question: 'Which telescope revolutionized astronomy since space observations?', a: 'Hubble Space Telescope', b: 'Kepler', c: 'Chandra', d: 'James Webb', correct: 'a'},
+    {seq: '12', question: 'What is a supernova?', a: 'Dying planet', b: 'Exploding star', c: 'New galaxy', d: 'Black hole formation', correct: 'b'}
+  ],
+  mahabharata: [
+    {seq: '1', question: 'Who is the eldest of the Pandavas?', a: 'Yudhisthira', b: 'Bhima', c: 'Arjuna', d: 'Nakula', correct: 'a'},
+    {seq: '2', question: 'Who is the mother of the Pandavas?', a: 'Kunti', b: 'Draupadi', c: 'Satyavati', d: 'Gandhari', correct: 'a'},
+    {seq: '3', question: 'Who fought with Karna in the Kurukshetra war and ultimately killed him?', a: 'Arjuna', b: 'Bhima', c: 'Yudhisthira', d: 'Abhimanyu', correct: 'a'},
+    {seq: '4', question: 'Who was the teacher of both Kauravas and Pandavas in martial arts?', a: 'Drona', b: 'Bhishma', c: 'Kripa', d: 'Parashurama', correct: 'a'},
+    {seq: '5', question: 'Which weapon did Arjuna obtain from Lord Shiva?', a: 'Pashupata', b: 'Brahmastra', c: 'Agneyastra', d: 'Varunastra', correct: 'a'},
+    {seq: '6', question: 'Who is the author of the Mahabharata?', a: 'Vyasa', b: 'Brahma', c: 'Vishnu', d: 'Shiva', correct: 'a'},
+    {seq: '7', question: 'Who killed Duryodhana?', a: 'Bhima', b: 'Arjuna', c: 'Yudhisthira', d: 'Shikhandi', correct: 'a'},
+    {seq: '8', question: 'What is the name of the Pandavas\' mother who married Pandu?', a: 'Kunti', b: 'Satyavati', c: 'Gandhari', d: 'Draupadi', correct: 'a'},
+    {seq: '9', question: 'Who was the charioteer of Arjuna who narrated the Bhagavad Gita?', a: 'Krishna', b: 'Sanjaya', c: 'Subhadra', d: 'Kripacharya', correct: 'b'},
+    {seq: '10', question: 'Who was blind king of Hastinapur?', a: 'Dhritarashtra', b: 'Pandu', c: 'Bhishma', d: 'Drona', correct: 'a'},
+    {seq: '11', question: 'Which warrior had the boon of not being killed by any man but was killed by a woman?', a: 'Bhishma', b: 'Barbarika', c: 'Shikhandi', d: 'Abhimanyu', correct: 'c'},
+    {seq: '12', question: 'Who is known for his devotion to Lord Krishna and is a key ally of Pandavas?', a: 'Sahadeva', b: 'Kripa', c: 'Arjuna', d: 'Subhadra', correct: 'c'}
+  ],
+  social: [
+    {seq: '1', question: 'What is the capital of India?', a: 'Mumbai', b: 'New Delhi', c: 'Kolkata', d: 'Chennai', correct: 'b'},
+    {seq: '2', question: 'Which movement fought for India\'s independence using non-violence?', a: 'Quit India', b: 'Non-Cooperation', c: 'Civil Disobedience', d: 'Swadeshi', correct: 'c'},
+    {seq: '3', question: 'Which is a fundamental right in many democracies?', a: 'Freedom of speech', b: 'Right to fly', c: 'Right to be invisible', d: 'Right to unlimited wealth', correct: 'a'},
+    {seq: '4', question: 'What does GDP measure?', a: 'Population', b: 'Wealth produced in an economy', c: 'Number of schools', d: 'Number of holidays', correct: 'b'},
+    {seq: '5', question: 'Which body makes laws in a country?', a: 'Judiciary', b: 'Executive', c: 'Legislature', d: 'Administration', correct: 'c'},
+    {seq: '6', question: 'Which is an example of primary sector activity?', a: 'Banking', b: 'Mining', c: 'Software development', d: 'Healthcare', correct: 'b'},
+    {seq: '7', question: 'What is a constitution?', a: 'A book of recipes', b: 'A set of fundamental rules and laws', c: 'A fiction novel', d: 'A travel guide', correct: 'b'},
+    {seq: '8', question: 'Which event is celebrated as Republic Day in India?', a: 'Independence from Britain', b: 'Adoption of the Constitution', c: 'Treaty signing', d: 'First Election', correct: 'b'},
+    {seq: '9', question: 'What is census used for?', a: 'Counting livestock', b: 'Measuring temperatures', c: 'Counting population', d: 'Measuring rainfall', correct: 'c'},
+    {seq: '10', question: 'Which right protects people from unfair detention?', a: 'Right to property', b: 'Right to personal liberty', c: 'Right to unlimited speech', d: 'Right to travel', correct: 'b'},
+    {seq: '11', question: 'What is social science study?', a: 'Physical laws', b: 'Human society and relationships', c: 'Plant growth', d: 'Space exploration', correct: 'b'},
+    {seq: '12', question: 'Which institution resolves civil disputes?', a: 'Police', b: 'Courts', c: 'Parliament', d: 'Schools', correct: 'b'}
+  ]
 };
 
 function applyTheme(theme) {
@@ -91,59 +169,13 @@ function selectRange(start, end, btn) {
 }
 
 function parseCSVLine(line){
-  try {
-    const parts = [];
-    let cur = '';
-    let inQuotes = false;
-    for(let i=0;i<line.length;i++){
-      const ch = line[i];
-      if(ch === '"') { inQuotes = !inQuotes; continue; }
-      if(ch === ',' && !inQuotes){
-        parts.push(cur.trim());
-        cur = '';
-      } else {
-        cur += ch;
-      }
-    }
-    if(cur.length) parts.push(cur.trim());
-    return parts;
-  } catch(err) {
-    throw new Error(`CSV parsing error on line: "${line}". Error: ${err.message}`);
-  }
+  // Not needed anymore since data is embedded
+  return [];
 }
 
-async function loadTopic(filename){
-  try {
-    const resp = await fetch('data/'+filename);
-    if(!resp.ok) {
-      throw new Error(`HTTP Error: ${resp.status} - Failed to load ${filename}`);
-    }
-    const text = await resp.text();
-    if(!text.trim()) {
-      throw new Error(`File is empty: ${filename}`);
-    }
-    const lines = text.split(/\r?\n/).map(l=>l.trim()).filter(l=>l && !l.startsWith('#'));
-    const out = [];
-    for(const line of lines){
-      try {
-        const cols = parseCSVLine(line);
-        if(cols.length < 7) {
-          console.warn('Skipping line with insufficient columns:', line);
-          continue;
-        }
-        out.push({seq:cols[0], question:cols[1], a:cols[2], b:cols[3], c:cols[4], d:cols[5], correct:cols[6].toLowerCase()});
-      } catch(lineErr) {
-        console.warn('Error parsing line:', line, lineErr);
-        continue;
-      }
-    }
-    if(out.length === 0) {
-      throw new Error(`No valid questions found in ${filename}`);
-    }
-    return out;
-  } catch(err) {
-    throw new Error(`Failed to load topic file (${filename}): ${err.message}`);
-  }
+function loadTopic(topicKey){
+  // Load data directly from embedded quizData object
+  return quizData[topicKey] || [];
 }
 
 function shuffle(arr){
@@ -181,7 +213,8 @@ async function startQuiz(){
   selectedTopic = file;
 
   try {
-    const allQuestions = await loadTopic(file);
+    // Load directly from embedded data (no fetch needed!)
+    const allQuestions = loadTopic(file);
 
     if(allQuestions.length === 0){
       alert('No questions found for this topic');
@@ -217,7 +250,7 @@ async function startQuiz(){
     showQuestion();
   } catch(err){
     console.error('Quiz Load Error:', err);
-    alert('Cannot load topic file:\n\n' + err.message + '\n\nMake sure you are running this from a local server, not from file:// protocol.');
+    alert('Error starting quiz:\n\n' + err.message);
   }
 }
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/com/example/demo/proto/GreeterGrpc.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/com/example/demo/proto/GreeterGrpc.java" />
+              <option name="updatedContent" value="package com.example.demo.proto;&#10;&#10;/**&#10; * Minimal hand-written stub of generated GreeterGrpc to satisfy IDE/compiler when protobuf plugin&#10; * hasn't generated classes yet.&#10; */&#10;public final class GreeterGrpc {&#10;    private GreeterGrpc() {}&#10;&#10;    public abstract static class GreeterImplBase implements io.grpc.BindableService {&#10;&#10;        /**&#10;         * Default implementation; override in service implementation.&#10;         */&#10;        public void sayHello(HelloProto.HelloRequest request, io.grpc.stub.StreamObserver&lt;HelloProto.HelloReply&gt; responseObserver) {&#10;            responseObserver.onError(new UnsupportedOperationException(&quot;Not implemented&quot;));&#10;        }&#10;&#10;        @Override&#10;        public io.grpc.ServerServiceDefinition bindService() {&#10;            // Provide a minimal service definition so the server binder can accept it.&#10;            return io.grpc.ServerServiceDefinition.builder(&quot;helloworld.Greeter&quot;).build();&#10;        }&#10;    }&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
