@@ -8,6 +8,6 @@
 8,What is the name of the Pandavas' mother who married Pandu?,Kunti,Satyavati,Gandhari,Draupadi,a
 9,Who was the charioteer of Arjuna who narrated the Bhagavad Gita?,Krishna,Sanjaya,Subhadra,Kripacharya,b
 10,Who was blind king of Hastinapur?,Dhritarashtra,Pandu,Bhishma,Drona,a
-11,Which warrior had the boon of not being killed by any man but was killed by a woman?,Bhishma,Barbarika,Shikhandi,Abhimanyu,c
+11,Which warrior had the boon of not being killed by any man but was killed by a woman?,Bhishma,Barbarika,Shikhandi,Abhimanyu,a
 12,Who is known for his devotion to Lord Krishna and is a key ally of Pandavas?,Sahadeva,Kripa,Arjuna,Subhadra,c
 
