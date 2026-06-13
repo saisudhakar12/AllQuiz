@@ -6,7 +6,7 @@ const themeSelect = document.getElementById('themeSelect');
 const displayMode = document.getElementById('displayMode');
 const questionRangeContainer = document.getElementById('questionRangeContainer');
 const randomModeContainer = document.getElementById('randomModeContainer');
-const rangeButtons = document.getElementById('rangeButtons');
+const rangeSelect = document.getElementById('rangeSelect');
 const topicSelect = document.getElementById('topic');
 const startBtn = document.getElementById('startBtn');
 const quizSection = document.getElementById('quiz');
@@ -134,39 +134,32 @@ displayMode.addEventListener('change', (e) => {
   if (e.target.value === 'serial') {
     questionRangeContainer.classList.remove('hidden');
     randomModeContainer.classList.add('hidden');
-    generateRangeButtons();
+    generateRangeDropdown();
   } else {
     questionRangeContainer.classList.add('hidden');
     randomModeContainer.classList.remove('hidden');
   }
 });
 
-function generateRangeButtons() {
-  rangeButtons.innerHTML = '';
+function generateRangeDropdown() {
+  rangeSelect.innerHTML = '<option value="">-- Choose a range --</option>';
   for (let i = 1; i <= 10; i++) {
     const start = (i - 1) * 10 + 1;
     const end = i * 10;
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'range-btn';
-    btn.textContent = `${start} to ${end}`;
-    btn.dataset.start = start;
-    btn.dataset.end = end;
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      selectRange(start, end, btn);
-    });
-    rangeButtons.appendChild(btn);
+    const option = document.createElement('option');
+    option.value = JSON.stringify({ start, end });
+    option.textContent = `Questions ${start} to ${end}`;
+    rangeSelect.appendChild(option);
   }
 }
 
-function selectRange(start, end, btn) {
-  // Remove active class from all buttons
-  document.querySelectorAll('.range-btn').forEach(b => b.classList.remove('active'));
-  // Add active class to clicked button
-  btn.classList.add('active');
-  selectedRange = { start, end };
-}
+rangeSelect.addEventListener('change', (e) => {
+  if (e.target.value) {
+    selectedRange = JSON.parse(e.target.value);
+  } else {
+    selectedRange = null;
+  }
+});
 
 function parseCSVLine(line){
   // Not needed anymore since data is embedded

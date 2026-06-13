@@ -39,18 +39,30 @@
         <div class="admin-card">
           <h3>Select Questions</h3>
           <div id="questionRangeContainer" class="hidden">
-            <div class="range-buttons" id="rangeButtons"></div>
-          </div>
-          <div id="randomModeContainer">
-            <label for="topic">Choose a topic:</label>
-            <select id="topic" class="admin-dropdown">
+            <label for="rangeSelect">Select Question Range:</label>
+            <select id="rangeSelect" class="admin-dropdown">
+              <option value="">-- Choose a range --</option>
+            </select>
+            <label for="topicSerial">Choose a topic:</label>
+            <select id="topicSerial" class="admin-dropdown topic-select">
               <option value="chemistry">Chemistry</option>
               <option value="science">Science</option>
               <option value="astronomy">Astronomy</option>
               <option value="mahabharata">Mahabharata</option>
               <option value="social">Social</option>
             </select>
-            <button id="startBtn" class="admin-btn-start">Start Quiz</button>
+            <button id="startBtnSerial" class="admin-btn-start start-btn">Start Quiz</button>
+          </div>
+          <div id="randomModeContainer">
+            <label for="topicRandom">Choose a topic:</label>
+            <select id="topicRandom" class="admin-dropdown topic-select">
+              <option value="chemistry">Chemistry</option>
+              <option value="science">Science</option>
+              <option value="astronomy">Astronomy</option>
+              <option value="mahabharata">Mahabharata</option>
+              <option value="social">Social</option>
+            </select>
+            <button id="startBtnRandom" class="admin-btn-start start-btn">Start Quiz</button>
           </div>
         </div>
       </div>
